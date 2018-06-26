@@ -1,0 +1,19 @@
+{
+  "name": "homebridge-pi-si7021",
+  "version": "0.0.1",
+  "description": "Homebridge plugin to connect to Si7021 temperature/humidity sensor via i2c on a Raspberry Pi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theseanything/homebridge-pi-Si7021.git"
+  },
+  "author": "Sean Rankine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theseanything/homebridge-pi-Si7021/issues"
+  },
+  "homepage": "https://github.com/theseanything/homebridge-pi-Si7021#readme"
+}
