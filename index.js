@@ -26,7 +26,7 @@ function TemperatureSensorAccessory(log, config) {
 
 TemperatureSensorAccessory.prototype.getState = function(callback) {
   this.log('Getting current state...')
-  si7021
+  this.sensor
     .readSensorData()
     .then(data => {
       callback(null, data['temperature_C'])
