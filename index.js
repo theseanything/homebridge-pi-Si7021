@@ -12,7 +12,7 @@ module.export = function(homebridge) {
   )
 }
 
-function TemperatureSensorAccessory(log, config) {
+function TemperatureSensorAccessory(log, config, api) {
   this.log = log
   this.name = config['name']
   this.sensor = new Si7021({ i2cBusNo: 1 })
@@ -25,15 +25,16 @@ function TemperatureSensorAccessory(log, config) {
 }
 
 TemperatureSensorAccessory.prototype.getState = function(callback) {
-  this.log('Getting current state...')
-  this.sensor
-    .readSensorData()
-    .then(data => {
-      callback(null, data['temperature_C'])
-    })
-    .catch(err => {
-      callback(err)
-    })
+  callback(null, 10.0)
+  // this.log('Getting current state...')
+  // this.sensor
+  //   .readSensorData()
+  //   .then(data => {
+  //     callback(null, data['temperature_C'])
+  //   })
+  //   .catch(err => {
+  //     callback(err)
+  //   })
 }
 
 TemperatureSensorAccessory.prototype.getServices = function() {
