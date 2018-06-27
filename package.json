@@ -20,10 +20,10 @@
     "si7021-sensor": "0.0.7"
   },
   "keywords": [
-     "homebridge-plugin"
+    "homebridge-plugin"
   ],
   "engines": {
-    "node": ">=0.12.0",
+    "node": ">=6.0.0",
     "homebridge": ">=0.2.0"
   }
 }

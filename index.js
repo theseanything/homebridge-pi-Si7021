@@ -1,4 +1,4 @@
-const Si7021 = require('si7021-sensor')
+// const Si7021 = require('si7021-sensor')
 let Service, Characteristic
 
 module.export = homebridge => {
@@ -6,7 +6,7 @@ module.export = homebridge => {
   Characteristic = homebridge.hap.Characteristic
 
   homebridge.registerAccessory(
-    'homebridge-temp',
+    'homebridge-pi-si7021',
     'Temp',
     TemperatureSensorAccessory
   )
@@ -16,7 +16,7 @@ class TemperatureSensorAccessory {
   constructor(log, config) {
     this.log = log
     this.name = config.name
-    this.sensor = new Si7021({ i2cBusNo: 1 })
+    // this.sensor = new Si7021({ i2cBusNo: 1 })
 
     this.service = new Service.TemperatureSensor(this.name)
 
