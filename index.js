@@ -39,7 +39,6 @@ temperatureSensorAccessory.prototype = {
   },
 
   getCurrentTemperature: function (callback) {
-    callback(null, 10.0)
     this.log('Getting current state...')
     this.sensor
       .readSensorData()
