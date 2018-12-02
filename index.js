@@ -1,7 +1,7 @@
 // const Si7021 = require('si7021-sensor')
 let Service, Characteristic;
 
-module.export = function (homebridge) {
+module.exports = function (homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
 
@@ -33,8 +33,8 @@ temperatureSensorAccessory.prototype = {
       .on('get', this.getCurrentTemperature.bind(this));
 
     this.informationService = informationService;
-    this.switchService = switchService;
-    return [informationService, switchService];
+    this.temperatureService = temperatureService;
+    return [informationService, temperatureService];
   },
 
   getCurrentTemperature: function (callback) {
