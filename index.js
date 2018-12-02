@@ -1,4 +1,4 @@
-// const Si7021 = require('si7021-sensor')
+const Si7021 = require('si7021-sensor')
 let Service, Characteristic;
 
 module.exports = function (homebridge) {
@@ -15,6 +15,7 @@ module.exports = function (homebridge) {
 function temperatureSensorAccessory(log, config) {
   this.log = log;
   this.config = config;
+  this.sensor = new Si7021({ i2cBusNo: 1 });
 }
 
 
@@ -38,7 +39,16 @@ temperatureSensorAccessory.prototype = {
   },
 
   getCurrentTemperature: function (callback) {
-    callback(null, 10.0);
+    callback(null, 10.0)
+    this.log('Getting current state...')
+    this.sensor
+      .readSensorData()
+      .then(data => {
+        callback(null, data['temperature_C'])
+      })
+      .catch(err => {
+        callback(err)
+      })
   }
 
 };
